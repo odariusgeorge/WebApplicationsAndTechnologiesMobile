@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <span><a routerLink="/postList">{{title}}</a></span>
-  <span class="spacer"></span>
+  <span fxFlex></span>
     <ul>
       <li *ngIf="userIsAdmin">
         <a mat-button routerLink="/createModerator" routerLinkActive="mat-accent">Add Moderator</a>

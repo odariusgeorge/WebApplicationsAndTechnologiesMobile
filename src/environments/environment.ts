@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000/api",
+  apiUrl: "http://nodejsangular-env.eba-upqyghfv.us-east-1.elasticbeanstalk.com/api",
   api: "http://localhost:3000"
 };
 

@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 //created
 import { HeaderComponent } from './header/header.component';
@@ -27,7 +28,8 @@ import { AuthModule } from './auth/auth-module';
     HttpClientModule,
     PostsModule,
     AngularMaterialModule,
-    AuthModule
+    AuthModule,
+    FlexLayoutModule
 
   ],
   providers: [

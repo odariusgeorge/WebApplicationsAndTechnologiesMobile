@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 @NgModule({
 exports: [
@@ -23,7 +24,8 @@ exports: [
   MatDialogModule,
   MatDatepickerModule,
   MatCheckboxModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSidenavModule
 ]
 })
 
