@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-card-content *ngIf="!isLoading">
+    <mat-card-title *ngIf="currentUser == post.winner">You are currently winning this product!</mat-card-title>
+    Title: {{post.title}} <br>
+    Author: {{post.author}} <br>
+    Course: {{post.course}} <br>
+    University: {{post.university}} <br>
+    Content: {{post.content}} <br>
+    Price: {{post.startingPrice}}$ <br>
+    <img height="100" width="100" src={{post.imagePath}}>
+  </mat-card-content>
+  <h1 *ngIf="!isLoading" align="center">Bid </h1>
+  <form *ngIf="!isLoading" [formGroup]="form" (submit) = "onPostBid()">
+    <h4> Ammount should be bigger than the current price! </h4>
+    <mat-form-field>
+      <input
+      matInput type = "number"
+      formControlName = "amount"
+      placeholder= {{post.startingPrice+1}}>
+    </mat-form-field>
+    <br>
+    <button
+      mat-raised-button
+      color = "primary"
+      type="submit"> Post Bid</button>
+      </form>
+</mat-card>
+
+
+

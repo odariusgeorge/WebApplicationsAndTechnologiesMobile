@@ -1,0 +1,15 @@
+<mat-accordion multi="true">
+  <mat-expansion-panel *ngFor="let user of users">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{user.email}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+    <mat-action-row>
+      <button mat-button color = "warn" (click) = "onDelete(user.email)"> DELETE </button>
+    </mat-action-row>
+  </mat-panel-description>
+  </mat-expansion-panel>
+</mat-accordion>
+

@@ -1,0 +1,56 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-card-content *ngIf="!isLoading">
+    <h1 align="center" *ngIf="post.creator == userId">You are selling this product!</h1>
+    Title: {{post.title}} <br>
+    Author: {{post.author}} <br>
+    Course: {{post.course}} <br>
+    University: {{post.university}} <br>
+    Content: {{post.content}} <br>
+    <img height="100" width="100" src={{post.imagePath}}>
+  </mat-card-content>
+    <mat-accordion multi="true" *ngIf="!isLoading">
+      <br> <br>
+      <h1 align="center"> Messages </h1>
+       <mat-card-content *ngFor="let messages of post.messages; index as i">
+         <mat-expansion-panel *ngIf="messages[0].public || (post.creator == userId) || (messages[0].creator == userId)">
+           <mat-expansion-panel-header *ngFor="let message of messages">
+             <mat-label *ngIf="message.creator == post.creator && post.creator!== userId">
+                Seller said:
+             </mat-label>
+             <mat-label *ngIf="message.creator == userId">
+                You said:
+             </mat-label>
+             <p>
+               {{message.content}}
+             </p>
+           </mat-expansion-panel-header>
+          <div [formGroup] = "form">
+            <div formArrayName="replies">
+              <input [formControlName]="i" placeholder="Enter a reply">
+              <button type="button" (click)= "onPostReply(i)">Leave a reply!</button>
+            </div>
+          </div>
+         </mat-expansion-panel>
+       </mat-card-content>
+    <form [formGroup]="form" (submit) = "onPostMessage()" *ngIf="userId!= post.creator">
+      <mat-form-field>
+        <input
+        matInput type = "text"
+        formControlName = "message"
+        placeholder= "Leave a Message">
+      </mat-form-field>
+      <br>
+      <button
+        mat-raised-button
+        color = "primary"
+        type="submit"> Post Message</button>
+        <br>
+        <mat-checkbox (change)="OnChange($event)">Private Message!</mat-checkbox>
+    </form>
+
+    </mat-accordion>
+</mat-card>
+
+
+

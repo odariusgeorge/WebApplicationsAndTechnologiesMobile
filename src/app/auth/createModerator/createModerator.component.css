@@ -1,0 +1,23 @@
+mat-form-field {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-sizing: inherit;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}

@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <span><a routerLink="/postList">{{title}}</a></span>
+  <span class="spacer"></span>
+    <ul>
+      <li *ngIf="userIsAdmin">
+        <a mat-button routerLink="/createModerator" routerLinkActive="mat-accent">Add Moderator</a>
+      </li>
+      <li *ngIf="userIsAdmin">
+        <a mat-button routerLink="/postListExpired" routerLinkActive="mat-accent">Expired Post</a>
+      </li>
+      <li *ngIf="userIsAdmin">
+        <a mat-button routerLink="/postListSold" routerLinkActive="mat-accent">Sold Post</a>
+      </li>
+      <li *ngIf="userIsAdmin">
+        <a mat-button routerLink="/userList" routerLinkActive="mat-accent">User List</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && !userIsAdmin">
+        <a mat-button routerLink="/postListSelling" routerLinkActive="mat-accent">My posts</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && !userIsAdmin">
+        <a mat-button routerLink="/postListBuying" routerLinkActive="mat-accent">My bids</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && !userIsAdmin">
+        <a mat-button routerLink="/postListWon" routerLinkActive="mat-accent">My won bids</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && !userIsAdmin">
+        <a mat-button routerLink="/postListBought" routerLinkActive="mat-accent">Bought Products</a>
+      </li>
+      <li *ngIf="userIsAuthenticated && !userIsAdmin">
+        <a mat-button routerLink="/createPost" routerLinkActive="mat-accent">New post</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a>
+      </li>
+      <li *ngIf="userIsAuthenticated">
+        <button mat-button (click)="onLogout()">Logout</button>
+      </li>
+    </ul>
+</mat-toolbar>

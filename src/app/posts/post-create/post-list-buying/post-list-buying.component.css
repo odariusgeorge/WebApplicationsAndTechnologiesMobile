@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-top: 16px;
+}
+
+.info-text {
+  text-align: center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.post-image {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  height: 40;
+  width: 40;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
+
+mat-panel-title,
+mat-panel-description,
+span {
+  display: block;
+}
